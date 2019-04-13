@@ -1,5 +1,5 @@
 {
-  "name": "omnisharp-client",
+  "name": "xen22.omnisharp-client",
   "description": "A node client for omnisharp-roslyn",
   "version": "99.0.1",
   "omnisharp-roslyn": "v1.32.18",
