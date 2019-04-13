@@ -1,5 +1,5 @@
 import * as child_process from 'child_process';
-import { Defer } from 'lodash';
+import { defer } from 'lodash';
 
 export enum SupportedPlatform {
     None,
