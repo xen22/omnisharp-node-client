@@ -974,7 +974,7 @@ export module Models {
 
     export interface WorkspaceInformationResponse {
         DotNet: Models.DotNetWorkspaceInformation;
-        MSBuild: Models.MsBuildWorkspaceInformation;
+        MsBuild: Models.MsBuildWorkspaceInformation;
         ScriptCs: ScriptCs.ScriptCsContextModel;
     }
 }
