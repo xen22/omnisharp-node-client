@@ -115,7 +115,8 @@ function getMinCandidate(candidates: string[]) {
         return -1;
     }
 
-    return minBy(map(candidates, normalize), z => z.split(sep).length).split(sep).length;
+    const min = minBy(map(candidates, normalize), z => z.split(sep).length);
+    return min ? min.split(sep).length : -1;
 }
 
 function searchForCandidates(location: string, filesToSearch: string[], projectFilesToSearch: string[], maxDepth: number, logger: ILogger): Observable<string> {

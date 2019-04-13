@@ -24,7 +24,7 @@ export class RequestContext<T extends OmniSharp.Models.Request> {
             this.command = command.toLowerCase();
         }
 
-        if (isObject<OmniSharp.Models.Request>(request)) {
+        if (isObject(request)) {
             if (request.Buffer) {
                 request.Buffer = stripBom(request.Buffer);
             }

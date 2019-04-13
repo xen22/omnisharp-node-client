@@ -1,5 +1,5 @@
 import * as fs from 'fs';
-import { assignWith, bind, delay, find, isNull, isUndefined, memoize, toLower } from 'lodash';
+import { assignWith, bind, delay, find, findKey, isNull, isUndefined, memoize, toLower } from 'lodash';
 import { delimiter, join, resolve } from 'path';
 import { AsyncSubject, Observable, Scheduler } from 'rxjs';
 import { ILogger } from '../enums';
@@ -17,9 +17,11 @@ const defaultDest = resolve(__dirname, '../../');
 // tslint:enable:no-var-requires no-require-imports
 
 // Handle the case of homebrew mono
-const PATH: string[] = find<any, string>(process.env, (v, key) => toLower(key) === 'path')
+const pathKey = findKey(process.env, k => toLower(k) === 'path');
+const envPath = pathKey ? process.env[pathKey] : undefined;
+const PATH: string[] = envPath ? envPath
     .split(delimiter)
-    .concat(['/usr/local/bin', '/Library/Frameworks/Mono.framework/Commands']);
+    .concat(['/usr/local/bin', '/Library/Frameworks/Mono.framework/Commands']) : [];
 
 export interface IRuntimeContext {
     platform: string;
