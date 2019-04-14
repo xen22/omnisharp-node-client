@@ -172,7 +172,7 @@ export class StdioDriver implements IDriver {
         env.PATH = this._PATH || env.PATH;
 
         const serverArguments: any[] = [
-            '--stdio',
+            //'--stdio',
             '--zero-based-indices',
             '-s', this._projectPath,
             '--hostPID',
@@ -314,5 +314,5 @@ export class StdioDriver implements IDriver {
             this.disconnect();
         }
     }
-// tslint:disable-next-line:max-file-line-count
+    // tslint:disable-next-line:max-file-line-count
 }

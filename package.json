@@ -1,7 +1,7 @@
 {
   "name": "xen22.omnisharp-client",
   "description": "A node client for omnisharp-roslyn",
-  "version": "99.0.2",
+  "version": "99.0.4",
   "omnisharp-roslyn": "v1.32.18",
   "bugs": {
     "url": "https://github.com/OmniSharp/omnisharp-node-client/issues"
