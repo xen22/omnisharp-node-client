@@ -176,7 +176,8 @@ export class StdioDriver implements IDriver {
             '--zero-based-indices',
             '-s', this._projectPath,
             '--hostPID',
-            process.pid
+            process.pid,
+            '--loglevel', 'Trace'
         ].concat(this._additionalArguments || []);
 
         if (startsWith(path, 'mono ')) {
@@ -185,6 +186,7 @@ export class StdioDriver implements IDriver {
             path = 'mono';
         }
 
+        this._logger.log(`additional arguments: ${this._additionalArguments}`);
         this._logger.log(`Arguments: ${serverArguments}`);
         this._process = spawn(path, serverArguments, { env });
 
